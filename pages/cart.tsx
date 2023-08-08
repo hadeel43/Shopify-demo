@@ -13,7 +13,7 @@ export default function Cart({ cart, checkoutUrl }: Props) {
         return (
           <li
             key={item.node.id}
-            className="flex flex-col lg:flex-row h-screen bg-bgColor text-black w-full justify-between items-center"
+            className="flex  h-screen bg-bgColor text-black w-full justify-between items-center"
           >
             <div className=" w-full justify-center items-center flex flex-col gap-4">
               <h2 className="text-2xl lg:text-4xl font-bold  uppercase">
