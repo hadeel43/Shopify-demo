@@ -36,7 +36,7 @@ export default function Page({ product }: Props) {
     };
 
     addCart();
-  }, [state]); // Only re-subscribe state changed
+  }, [state]); // Only re-subscribe if state changed
 
   const image = product.images.filter(
     (image) => image.id === state.variant?.image
