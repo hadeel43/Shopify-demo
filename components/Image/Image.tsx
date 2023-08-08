@@ -4,12 +4,13 @@ import Image from "next/image";
 
 interface Props {
   fit?: string;
+  alt: string;
   src?: any;
   width?: any;
   height?: any;
 }
 
-const NextImage = ({ fit, src, width, height }: Props) => {
+const NextImage = ({ fit, src, width, height, alt }: Props) => {
   return (
     <Image
       className={classNames({
@@ -21,7 +22,7 @@ const NextImage = ({ fit, src, width, height }: Props) => {
       src={src}
       height={height ? height : "1200"}
       width={width ? width : "900"}
-      alt=""
+      alt={alt}
     />
   );
 };
