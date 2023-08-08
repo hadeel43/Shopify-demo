@@ -1,0 +1,46 @@
+query getProductSingle($handle: String!) {
+  productByHandle(handle: $handle) {
+    title
+    description
+    node{
+      id
+    }
+    seo {
+      title
+      description
+    }
+    images(first: 2) {
+      edges {
+        node {
+          id
+          altText
+          transformedSrc(maxWidth: 768, maxHeight: 1024, crop: CENTER, preferredContentType: JPG)
+        }
+      }
+    }
+    variants(first: 2) {
+      edges {
+        node {
+          id
+          title
+          description
+          priceV2 {
+            amount
+          }
+          image {
+            id
+          }
+        }
+      }
+    }
+  }
+}
+
+mutation checkout($input: CheckoutCreateInput!) {
+  checkoutCreate(input: $input) {
+    checkout {
+      id
+      webUrl
+    }
+  }
+}
